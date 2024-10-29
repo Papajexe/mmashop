@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep MMA - Strona Główna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('./1.gif'); /* Tło dla strony głównej */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 965px;
+        }
+        header {
+            background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            position: relative;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background */
+        }
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a.active {
+            background-color: #555;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background */
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown a:hover {
+            background-color: #555;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 01.5px;
+            background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
+            color: white;
+        }
+    
+        .slider-container {
+            opacity: 0.9;
+            width: 100%;
+            background-color: rgba(34, 34, 34, 0.7);
+            overflow: hidden;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            width: 10%;
+            animation: slide 10s linear infinite;
+        }
+
+        .slider img {
+            width: 33.333%;
+            height: auto;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(331.333%); }
+            66% { transform: translateX(661.666%); }
+            100% { transform: translateX(1000%); }
+        }
+
+        /* Style for blog section */
+        .blog-section {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 10px;
+            border-radius: 8px;
+        }
+        .blog-section h3 {
+            text-align: center;
+            color: #333;
+        }
+        .blog-article {
+            margin: 15px 0;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .blog-article:last-child {
+            border-bottom: none;
+        }
+        .blog-article h4 {
+            color: #444;
+        }
+        .blog-article p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sklep MMA - Najlepsze Akcesoria do MMA</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index1.html" id="homeTab" class="active">Strona główna</a></li>
+        <li>
+            <a href="index2.html" id="productsTab">Akcesoria</a>
+            <div class="dropdown">
+                <a href="accessories.html#ubior">Ubiór</a>
+                <a href="accessories.html#sprzet">Sprzęt</a>
+                <a href="accessories.html#ochraniacze">Ochraniacze</a>
+                <a href="accessories.html#suplementy">Suplementy</a>
+            </div>
+        </li>
+        <li><a href="index3.html" id="contactTab">Kontakt</a></li>
+        <li><a href="blog.html" id="blogTab">Blog</a></li>
+    </ul>
+</nav>
+
+<div style="height: 500px">
+    <div class="container">
+        <h2>Witaj w naszym sklepie MMA!</h2>
+        <p>Znajdziesz tutaj najlepsze akcesoria do MMA.</p>
+    </div>
+</div>
+
+<!-- Blog Section Placeholder -->
+<div class="blog-section">
+    <h3>Najnowsze Porady na Blogu</h3>
+    <div class="blog-article">
+        <h4>Jak wybrać rękawice do MMA?</h4>
+        <p>Dowiedz się, jak dobrać rękawice odpowiednie do Twojego stylu walki...</p>
+    </div>
+    <div class="blog-article">
+        <h4>Top 5 Suplementów dla Zawodników MMA</h4>
+        <p>Odkryj, które suplementy mogą pomóc w osiągnięciu lepszej wydolności...</p>
+    </div>
+</div>
+
+<footer>
+    <p>Sklep MMA &copy; 2024</p>
+</footer>
+
+<div class="slider-container">
+    <div class="slider">
+        <img src="../backup_19.09.2024/ksw_logo.png" alt="Zdjęcie 1">
+        <img src="../backup_19.09.2024/beltor_logo.png" alt="Zdjęcie 2">
+        <img src="../backup_19.09.2024/fairtex_logo.png" alt="Zdjęcie 3">
+    </div>
+</div>
+
+</body>
+</html>

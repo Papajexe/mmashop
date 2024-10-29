@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep MMA - Strona Główna</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('./1.gif'); /* Tło dla strony głównej */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 900px;
+        }
+        header {
+            background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    
+            
+        nav {
+            position: relative;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background */
+        }
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a.active {
+            background-color: #555;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background */
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown a:hover {
+            background-color: #555;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 01.5px;
+            background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
+            color: white;
+        }
+    
+        .slider-container {
+            opacity: 0.9;
+            width: 100%;
+            background-color: rgba(34, 34, 34, 0.7);
+            overflow: hidden;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            width: 10%;
+            animation: slide 10s linear infinite;
+        }
+
+        .slider img {
+            width: 33.333%;
+            height: auto;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(331.333%); }
+            66% { transform: translateX(661.666%); }
+            100% { transform: translateX(1000%); }
+        }
+/* Styles for categories under the slider */
+        .categories {
+            background-color: rgba(34, 34, 34, 0.7);
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .category {
+            text-align: left;
+            width: 23%;
+        }
+        .category h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .category ul {
+            list-style: none;
+            padding: 0;
+        }
+        .category ul li {
+            margin-bottom: 5px;
+        }
+        .category ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        .category ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Smaller table styles */
+        .table-container {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 20px;
+            border-radius: 8px;
+            max-width: 500px; /* Zmniejszamy szerokość */
+            margin: auto; /* Wyśrodkowanie tabeli */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #555;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sklep MMA - Najlepsze Akcesoria do MMA</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index1.html" id="homeTab" class="active">Strona główna</a></li>
+        <li>
+            <a href="index2.html" id="productsTab">Akcesoria</a>
+            <div class="dropdown">
+                <a href="accessories.html#ubior">Ubiór</a>
+                <a href="accessories.html#sprzet">Sprzęt</a>
+                <a href="accessories.html#ochraniacze">Ochraniacze</a>
+                <a href="accessories.html#suplementy">Suplementy</a>
+            </div>
+        </li>
+        <li><a href="index3.html" id="contactTab">Kontakt</a></li>
+        <li><a href="blog.html" id="blogTab">Blog</a></li>
+    </ul>
+</nav>
+
+
+<!-- Tabela do wypełnienia -->
+<div class="table-container">
+    <h2>Formularz zamówienia</h2>
+    <form action="submit_order.php" method="POST">
+        <table>
+            <tr>
+                <th>Imię i nazwisko</th>
+                <td><input type="text" name="fullname" required></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="text" name="email" required></td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td><input type="text" name="phone" required></td>
+            </tr>
+            <tr>
+                <th>Adres</th>
+                <td><input type="text" name="address" required></td>
+            </tr>
+        </table>
+        <input type="submit" value="Wyślij zamówienie">
+    </form>
+</div>
+
+<!-- Slider -->
+<div class="categories">
+    <div class="category">
+        <h3>MMA Shop</h3>
+        <ul>
+            <li>Email: kontakt@mmashop.pl</li>
+            <li>Telefon: +48 123 456 789</li>
+            <li>Adres: ul. Sportowa 1, 00-100 Warszawa</li>
+        </ul>
+    </div>
+    <div class="category">
+        <h3>Współpraca</h3>
+        <ul>
+            <li><a href="#">Venum</a></li>
+            <li><a href="#">Fairtex</a></li>
+            <li><a href="#">Everlast</a></li>
+        </ul>
+    </div>
+    <div class="category">
+        <h3>Informacje o sklepie</h3>
+        <ul>
+            <li><a href="#">Regulamin</a></li>
+            <li><a href="#">Koszty wysyłki</a></li>
+            <li><a href="#">Wysyłka i zwroty</a></li>
+        </ul>
+    </div>
+
+
+<!-- Kategoria: O nas, współpraca, informacje, zakupy -->
+
+    <div class="category">
+        <h3>Zakupy</h3>
+        <ul>
+            <li><a href="koszyk.html">Koszyk</a></li>
+        </body>
+        </html>
